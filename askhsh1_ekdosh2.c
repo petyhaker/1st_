@@ -126,7 +126,10 @@ int main (void)
     // while ( ( (back->dumanh) <= (2*front->dunamh) ) and (back != NULL) ) do back = back->next;
     while (back->next != NULL)
     {
-          while ( ( (back->dunamh) <= (2*front->dunamh) ) and (back != NULL) ) back = back->next; // to back einai
+          while ( ( (back->dunamh) <= (2*front->dunamh) ) && (back != NULL) )
+          {
+           back = back->next; // to back einai   
+          }
                                          // sto ena parapanw apo oti prepei. dhladh einai se xwra pou trwei to front!
           apostash = length(front, back);
           if ( apostash >= max )
