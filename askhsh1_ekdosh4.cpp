@@ -36,22 +36,70 @@ void merge_sort (int v[], int start, int end)
   merge (v, start, middle, end); 
 }
 
-int main ()
+int main (int argc, char *argv[])
 {
     int i, k, l;
     int N, temp, count =0;
     int max=0;
     int c;
-    
-    scanf("%i", &N);
-    
-    int a[N], b[N];
 
+    int number;
+    int counter = 0;
     
-    for (i=0; i<N; i++) { scanf("%i", &a[i]); }
+    //    filename = argv[0];
+    //    printf("%s", argv[argc-1]);
+    
+    FILE* in_file = fopen(argv[argc-1], "r"); // read only
+    
+    if (! in_file ) // equivalent to saying if ( in_file == NULL )
+    {
+        printf("oops, file can't be read\n");
+//        exit(-1);
+    }
+    
+    // attempt to read the next line and store
+    // the value in the "number" variable
+    
+    //          while ( fscanf(in_file, "%d", & number ) == 1 )
+    //             {
+    //                 if(counter == 0){
+    //                     N = number;
+    ////                     printf("The main N number is %d\n", N);
+    //                     counter ++;
+    //
+    //                 }
+    //                 else{
+    //                     input[counter-1]=number;
+    ////                     printf("We just read %d\n", number);
+    ////                     printf("the matrix has value %d\n", input[counter-1]);
+    //                     counter++;
+    //                 }
+    //
+    //             }
+    
+    fscanf(in_file, "%d", & N );
+    
+    int a[N];
+    
+    while ( fscanf(in_file, "%d", & number ) == 1 ){
+        
+        a[counter]=number;
+        //                     printf("We just read %d\n", number);
+        printf("the matrix has value %d\n", a[counter]);
+        counter++;
+        
+        
+    }
+    
+    
+    
+    int b[N];
     
     merge_sort(a, 0, N);
+<<<<<<< HEAD
     //for (i=0; i<N; i++) { printf("%i", a[i]); }
+=======
+>>>>>>> reading with files
     
     k=0; l=0;
     while (l<N) 
