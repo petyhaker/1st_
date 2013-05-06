@@ -125,10 +125,12 @@ int main (int argc, char *argv[])
           k++;
     }
     
-    printf("%i \n", max);
+    int count =0 ;
     i=0;
-    while ( (b[i] != 0) && i<N ) { printf("%i ", b[i]); i++;}
+    while ( (b[i] != 0) && i<N ) { count ++; i++;}
+    printf("%i %i \n", max, count);
     //scanf("%i", c);
+    
     return 0;
 
 }
