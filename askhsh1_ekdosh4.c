@@ -40,18 +40,18 @@ int main (int argc, char *argv[])
 {
     int i, k, l;
     int N, temp;
-    int limit = 1000000;
+//    int limit = 2000000;
     int max=0;
     int c, counter;
     
 //    scanf("%i", &N);
     
-    int input[limit];
-    int number; 
+//    int input[limit];
+    int number;
     counter = 0;
     
 //    filename = argv[0];
-    printf("%s", argv[argc-1]);
+//    printf("%s", argv[argc-1]);
     
           FILE* in_file = fopen(argv[argc-1], "r"); // read only
          
@@ -64,30 +64,46 @@ int main (int argc, char *argv[])
           // attempt to read the next line and store
           // the value in the "number" variable
     
-          while ( fscanf(in_file, "%d", & number ) == 1 )  
-             {
-                 if(counter ==0){
-                     N = number;
-                     printf("The main N number is %d\n", number);
-                     counter ++;
-                     
-                 }
-                 else{
-                     input[counter-1]=number;
-                     printf("We just read %d\n", number);
-                     printf("the matrix has value %d\n", input[counter-1]);
-                     counter++;
-                 }
-               
-             } 
-            
-
-    int a[N], b[N];
+//          while ( fscanf(in_file, "%d", & number ) == 1 )  
+//             {
+//                 if(counter == 0){
+//                     N = number;
+////                     printf("The main N number is %d\n", N);
+//                     counter ++;
+//                     
+//                 }
+//                 else{
+//                     input[counter-1]=number;
+////                     printf("We just read %d\n", number);
+////                     printf("the matrix has value %d\n", input[counter-1]);
+//                     counter++;
+//                 }
+//               
+//             }
     
-    for (i=0; i<N; i++) {
+    fscanf(in_file, "%d", & N );
     
-        a[i]=input[i];
+    int a[N];
+    
+    while ( fscanf(in_file, "%d", & number ) == 1 ){
+ 
+            a[counter]=number;
+            //                     printf("We just read %d\n", number);
+            printf("the matrix has value %d\n", a[counter]);
+            counter++;
+        
+        
     }
+
+    
+
+    int b[N];
+    
+//    for (i=0; i<N; i++) {
+//    
+//        a[i]=input[i];
+//        printf("%d\n",a[i]);
+//    }
 //
 //    
 //    for (i=0; i<N; i++) { scanf("%i", &a[i]); }
