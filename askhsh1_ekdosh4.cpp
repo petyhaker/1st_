@@ -50,7 +50,8 @@ int main ()
     
     for (i=0; i<N; i++) { scanf("%i", &a[i]); }
     
-    merge_sort(a, 0, N-1);
+    merge_sort(a, 0, N);
+    //for (i=0; i<N; i++) { printf("%i", a[i]); }
     
     k=0; l=0;
     while (l<N) 
