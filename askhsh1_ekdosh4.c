@@ -36,20 +36,24 @@ void merge_sort (int v[], int start, int end)
   merge (v, start, middle, end); 
 }
 
-int main ()
+int main (int argc, char *argv[])
 {
     int i, k, l;
     int N, temp;
+    int limit = 1000000;
     int max=0;
     int c, counter;
     
 //    scanf("%i", &N);
     
-    int input[10];
+    int input[limit];
     int number; 
     counter = 0;
     
-          FILE* in_file = fopen("countries1.txt", "r"); // read only  
+//    filename = argv[0];
+    printf("%s", argv[argc-1]);
+    
+          FILE* in_file = fopen(argv[argc-1], "r"); // read only
          
           if (! in_file ) // equivalent to saying if ( in_file == NULL ) 
              {  
@@ -64,14 +68,14 @@ int main ()
              {
                  if(counter ==0){
                      N = number;
-//                     printf("The main N number is %d\n", number);
+                     printf("The main N number is %d\n", number);
                      counter ++;
                      
                  }
                  else{
                      input[counter-1]=number;
-//                     printf("We just read %d\n", number);
-//                     printf("the matrix has value %d\n", a[counter-1]);
+                     printf("We just read %d\n", number);
+                     printf("the matrix has value %d\n", input[counter-1]);
                      counter++;
                  }
                
