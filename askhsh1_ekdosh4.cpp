@@ -39,7 +39,7 @@ void merge_sort (int v[], int start, int end)
 int main ()
 {
     int i, k, l;
-    int N, temp;
+    int N, temp, count =0;
     int max=0;
     int c;
     
@@ -67,9 +67,9 @@ int main ()
           k++;
     }
     
-    printf("%i \n", max);
     i=0;
-    while ( (b[i] != 0) && i<N ) { printf("%i ", b[i]); i++;}
+    while ( (b[i] != 0) && i<N ) {count++; i++;}
+    printf("%i %i \n", max, count);
     scanf("%i", c);
     return 0;
 
